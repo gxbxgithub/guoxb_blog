@@ -9,7 +9,7 @@ const { ALI_OSS_UPLOAD_PATH } = require('../config/config.default')
 class SystemController {
   async upload(ctx) {
     try {
-      const img = ctx.request.files?.file || null
+      const img = ctx.request.files ? ctx.request.files.file : null
       if (!img) {
         return ctx.body = reqResult.error('选择资源异常')
       }
