@@ -1,0 +1,74 @@
+@import "./common.scss";
+
+// 最新文章
+.asset-view{
+  .asset-title{
+    padding-bottom: 10px;
+    font-family: "Trebuchet MS",Arial,"Lucida Grande",Verdana,Lucida,Helvetica,sans-serif;
+    font-size: 24px; font-weight: 500;
+    border-bottom: 1px solid $color-line;
+    text-align: justify; line-height: 30px;
+  }
+  .asset-tags{
+    font-size: 16px; line-height: 30px; text-align: right;
+    color: $color-middle;
+    a{color: $color-theme;}
+  }
+  .asset-content{
+    font-size: 16px; line-height: 26px; margin-top: 10px;
+    .asset-more-link{
+      margin-top: 10px; display: inline-block; color: $color-theme;
+      &:hover{text-decoration: underline;}
+    }
+  }
+  .asset-footer{
+    margin-top: 5px;
+    .time{font-size: 14px;}
+  }
+}
+
+// 往期文章
+.previous-view{
+  ul{
+    margin-top: 10px;
+    li{
+      display: flex; line-height: 30px;
+      span{color: $color-light;}
+      a{
+        @include manyLine();
+        margin-left: 5px; flex: 1; text-align: justify;
+        &:hover{color: $color-theme;}
+      }
+    }
+  }
+  .more-link{
+    margin-top: 10px; display: inline-block; color: $color-theme;
+    &:hover{text-decoration: underline;}
+  }
+}
+
+// 个人信息
+.info-view{
+  font-family: "Trebuchet MS",Arial,"Lucida Grande",Verdana,Lucida,Helvetica,sans-serif;
+  color: #fff; text-align: center; line-height: 30px;
+  background: $color-normal;
+  padding: $width-space 0;
+  h1{
+    font-size: 20px; font-weight: 500;
+  }
+  p{
+    font-size: 14px; margin-top: 20px;
+  }
+}
+
+// 分类
+.types-view{
+  ul{
+    margin-top: 10px;
+    li{
+      margin-left: 20px;
+      font-size: 14px; line-height: 30px; list-style-type: square;
+      a{text-decoration: underline; &:hover{color: $color-theme;}}
+    }
+  }
+}

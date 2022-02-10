@@ -3,6 +3,7 @@ const dbHelper = require('../utils/dbHelper')
 
 const articleSchema = new Schema({
   name: String,
+  shortName: String, // 作为路径的名称-英文
   articleCount: {  // 文章数量
     type: Number,
     default: 0
@@ -16,6 +17,10 @@ const getModel = async () => {
 }
 
 module.exports = {
+  async oneByQuery(query) {
+    const model = await getModel()
+    return await dbHelper.findOne(model, query)
+  },
   async add(params) {
     const model = await getModel()
     return await dbHelper.insert(model, params)

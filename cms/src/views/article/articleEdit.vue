@@ -28,7 +28,7 @@
         :tabSize="2" 
         :html="false"
         @save="handleCommit(0, true)"
-        ref="md" 
+        ref="md"
         @imgAdd="handleUploadImg"
       />
       
@@ -61,6 +61,7 @@ const handleCommit = async (publish, save) => {
   let params = {...forms.value}
   if (!params.title || !params.type || !params.content) return proxy.$toast('请将信息填写完成~')
   let result = null
+
   if (params._id) {
     result = await proxy.$api_loading.put('/article/edit', params)
   } else {

@@ -40,14 +40,14 @@ class ArticleController {
     }
   }
   async operation(ctx) {
-    let { _id, title, content, type, publish = 0, createAt } = ctx.request.body
+    let { _id, title, intro, content, type, publish = 0, createAt } = ctx.request.body
     try {
       let result = null, message = null
       if (_id) {
-        result = await articleModel.update({ _id, title, content, type, publish, createAt })
+        result = await articleModel.update({ _id, title, intro, content, type, publish, createAt })
         message = '文章更新成功'
       } else {
-        result = await articleModel.add({ title, content, type, publish, createAt })
+        result = await articleModel.add({ title, intro, content, type, publish, createAt })
         message = publish == 1 ? '文章发布成功' : '文章保存成功'
       }
       ctx.body = reqResult.success(message, result)

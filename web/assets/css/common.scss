@@ -1,0 +1,47 @@
+body{ margin:0; background-color: $color-bg; color: $color-normal; font-family: Georgia, serif;}
+img{ border:0; display: block;}
+form{ display:inline;}
+h1,h2,h3,h4,h5,h6,ul,dd,dl,dt,p{font: inherit; margin:0; padding:0; border:0; outline:0; vertical-align:baseline; background:transparent; list-style:outside none none;}
+u, b, em, i{font-style:normal; list-style:none none; text-decoration:none;}
+input, button, select, textarea{outline:none; border: none;}
+input[type=button], input[type=submit], input[type=file], button { cursor: pointer; -webkit-appearance: none; } 
+textarea{resize: none;}
+input:focus, button:focus, select:focus, textarea:focus{box-shadow:none; outline:none;}
+a:hover{text-decoration:none; color: $color-theme;}
+a{color: $color-normal; text-decoration:none;}
+
+.clearfix{
+  clear: both;
+}
+.layout{
+  margin: 0 auto; width: $width-layout;
+}
+.one-column .layout{
+  width: $width-layout-article;
+}
+.content-view{
+  width: $width-layout-content; float: left;
+}
+.aside-view{
+  width: $width-layout-aside; float: right;
+}
+// 模块
+.module-view{
+  box-sizing: border-box; 
+  padding: $width-space; 
+  margin-bottom: $width-space;
+  background: #fff; 
+  box-shadow: 0 2px 2px 0 rgba(61, 59, 59, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.06), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  .module-title{
+    font-size: 20px; font-weight: 500; line-height: 24px; border-bottom: 1px solid $color-line;
+    padding-bottom: 10px;
+  }
+}
+// 导航
+.guide-view{
+  padding: 10px 0;
+  li{
+    line-height: 30px; display: inline-block;
+    a{color: $color-theme;}
+  }
+}

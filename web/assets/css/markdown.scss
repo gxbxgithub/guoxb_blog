@@ -1,0 +1,38 @@
+.code-view {
+  font-size             : 16px;
+  line-height           : 1.8em;
+  text-align            : justify;
+  -webkit-font-smoothing: antialiased;
+
+  &>*:first-child {margin-top: 0 !important;}
+  &>*:last-child {margin-bottom: 0 !important;}
+
+  code[class*=language-], pre[class*=language-] {
+    font-size: 14px;
+    background: $color-normal;
+    color: #fff;
+    padding: 1em 1.5em;
+    display: block;
+  }
+  .hljs-comment{color: $color-light;}
+  code{background: $color-theme; color: #fff; padding: 0 5px; border-radius: 3px;}
+  blockquote {border-left: 5px solid $color-theme; padding: 10px 15px; background: #eee;}
+  blockquote>:first-child {margin-top: 0;}
+  blockquote>:last-child {margin-bottom: 0;}
+
+  p, blockquote, ul, ol, dl, li, table, pre {
+    margin: 0.8em 0;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    position   : relative;
+    line-height: 2em;
+    margin-top: 1em;
+  }
+  h1 {font-size: 28px; color: $color-normal;}
+  h2 {font-size: 24px; border-bottom: 1px solid $color-line; color: $color-normal;}
+  h3 {font-size: 22px; color: $color-normal;}
+  h4 {font-size: 20px; color: $color-normal;}
+  h5 {font-size: 18px; color: $color-normal;}
+  h6 {font-size: 16px; color: $color-normal;}
+}

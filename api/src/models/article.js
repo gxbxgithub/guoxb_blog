@@ -3,7 +3,8 @@ const dbHelper = require('../utils/dbHelper')
 
 const articleSchema = new Schema({
   title: String,
-  content: String,
+  intro: String, // 简介
+  content: String,  // markdown 内容
   type: String, // 分类
   readCount: {  // 阅读数
     type: Number,
