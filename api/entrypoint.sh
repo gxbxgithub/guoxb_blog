@@ -1,3 +1,4 @@
 #!/bin/bash
 cp -a ./cms/dist/* ./public/
-export node ./src/main.js
+cd ./src
+export node main.js
