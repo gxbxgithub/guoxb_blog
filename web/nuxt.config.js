@@ -77,8 +77,9 @@ export default {
 
   proxy: {
     '/api': {
-      target: 'http://localhost:8080',
-      pathRewrite: { '^/api': '' }
+      target: 'http://47.104.82.94:3100'
+      // target: 'http://localhost:8080',
+      // pathRewrite: { '^/api': '' }
     }
   },
 

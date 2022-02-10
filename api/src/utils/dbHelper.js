@@ -14,7 +14,7 @@ const pool = async (dbName) => {
   })
   pools[dbName] = db
   db.on('error', function (err) {
-    Logger.log('Mongoose connection error: ' + err);
+    console.log('Mongoose connection error: ' + err);
   })
   return db
 }
