@@ -2,7 +2,7 @@ FROM node:9.2.0
 
 RUN mkdir -p /data/api
 COPY ./api /data/api
-COPY ./cms/dist/* /data/api/public
+ADD ./cms/dist/* /data/api/public
 
 WORKDIR /data/api/
 
