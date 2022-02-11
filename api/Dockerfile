@@ -9,6 +9,6 @@ RUN npm install
 
 RUN chmod a+x ./entrypoint.sh
 
-EXPOSE 8080
+EXPOSE 3130
 
 CMD ./entrypoint.sh pro
