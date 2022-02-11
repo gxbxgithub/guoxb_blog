@@ -1,3 +1,3 @@
 #!/bin/bash
 cp -a ./cms/dist/* ./public/
-node ./src/main.js
+export NODE_ENV=$1 && node ./src/main.js

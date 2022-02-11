@@ -4,7 +4,8 @@
   "description": "guoxb's blog api project.",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./src/main.js"
+    "dev": "NODE_ENV=dev nodemon ./src/main.js",
+    "pro": "NODE_ENV=pro nodemon ./src/main.js"
   },
   "keywords": [],
   "author": "",

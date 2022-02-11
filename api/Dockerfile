@@ -1,7 +1,7 @@
 FROM node:9.2.0
 
 RUN mkdir -p /data/api
-COPY ./ /data/api
+COPY ../api/ /data/api
 WORKDIR /data/api/
 
 RUN npm config set registry "http://registry.npm.taobao.org/"
@@ -11,4 +11,4 @@ RUN chmod a+x ./entrypoint.sh
 
 EXPOSE 8080
 
-CMD ./entrypoint.sh
+CMD ./entrypoint.sh pro
