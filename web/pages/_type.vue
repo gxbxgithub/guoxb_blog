@@ -4,7 +4,7 @@
     <ul class="layout guide-view">
       <li><nuxt-link to="/">首页 </nuxt-link>»</li>
       <li><nuxt-link to="/article/">分类 </nuxt-link>»</li>
-      <li><h1>{{ type }}</h1></li>
+      <li><h1>{{ typeInfo.name }}</h1></li>
     </ul>
 
     <section class="layout">
@@ -35,15 +35,17 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: '分类：' + this.typeInfo.name + ' - 郭晓波的博客'
+    }
+  },
   data() {
     return {
       list: []
     }
   },
   computed: {
-    type() {
-      return this.list.length > 0 ? this.list[0].typeInfo.name : ''
-    },
     sortedList() {
       if (this.list.lenght == 0) return {}
       // {'2022': []}
@@ -61,11 +63,12 @@ export default {
     }
   },
   async asyncData({ $axios, params }) {
-    let [listRst, typeRst] = await Promise.all([
+    let [listRst, typeRst, typeInfoRst] = await Promise.all([
       $axios.$get(`web/article/list?type=${params.type}`),
       $axios.$get('web/type/list'),
+      $axios.$get('web/type/detail/' + params.type)
     ]);
-    return { list: listRst?.data?.list || [], types: typeRst?.data };
+    return { list: listRst?.data?.list || [], types: typeRst?.data, typeInfo: typeInfoRst?.data };
   },
 }
 </script>

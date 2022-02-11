@@ -30,6 +30,11 @@
 
 <script>
 export default {
+  head() {
+    return {
+      title: '最近文章 - 郭晓波的博客'
+    }
+  },
   data() {
     return {
       list: []
@@ -44,7 +49,7 @@ export default {
   async asyncData({ $axios, params }) {
     let [listRst, typeRst] = await Promise.all([
       $axios.$get(`web/article/list?type=${params.type}&page=1&size=21`),
-      $axios.$get('web/type/list'),
+      $axios.$get('web/type/list')
     ]);
     return { list: listRst?.data?.list || [], types: typeRst?.data };
   },

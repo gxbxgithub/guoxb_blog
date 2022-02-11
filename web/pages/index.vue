@@ -28,11 +28,6 @@
 <script>
 export default {
   name: "IndexPage",
-  data() {
-    return {
-      content: "# Hello world",
-    };
-  },
   computed: {
     prevList() {
       return this.list.slice(1, this.list.length)

@@ -1,14 +1,15 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'web',
+    title: '郭晓波的博客',
     htmlAttrs: {
       lang: 'en'
     },
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { name: 'viewport', content: 'width=device-width,initial-scale=1.0,user-scalable=no,minimum-scale=1.0,maximum-scale=1.0' },
+      { hid: 'description', name: 'description', content: '郭晓波的博客_前端技术分享，问题笔记，生活随笔!' },
+      { name: 'keywords', content: '前端技术,问题笔记,生活随笔' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
@@ -77,8 +78,7 @@ export default {
 
   proxy: {
     '/api': {
-      target: 'http://47.104.82.94:3100'
-      // target: 'http://localhost:8080',
+      target: process.env.NODE_ENV == 'dev' ? 'http://localhost:8080' : 'http://172.17.0.1:3100',
       // pathRewrite: { '^/api': '' }
     }
   },

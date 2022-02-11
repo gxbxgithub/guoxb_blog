@@ -21,7 +21,11 @@
 
 <script>
 export default {
-  name: 'ArticleDetail',
+  head() {
+    return {
+      title: this.article.title + ' - 郭晓波的博客'
+    }
+  },
   async asyncData({ $axios, params }) {
     let result = await $axios.$get("web/article/detail/" + params.id);
     return { article: result.data };

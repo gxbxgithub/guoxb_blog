@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "NODE_ENV=dev nuxt",
     "build": "nuxt build",
-    "start": "nuxt start",
+    "start": "NODE_ENV=pro nuxt start",
     "generate": "nuxt generate"
   },
   "config": {

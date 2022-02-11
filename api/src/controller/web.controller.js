@@ -57,6 +57,15 @@ class WebController {
       ctx.app.emit('error', reqResult.error('加载分类错误'), ctx)
     }
   }
+  async typeInfo(ctx) {
+    const { name } = ctx.params
+    try {
+      let type = await typeModel.oneByQuery({ shortName: name })
+      ctx.body = reqResult.success(null, type)
+    } catch (error) {
+      ctx.app.emit('error', reqResult.error('加载分类信息错误'), ctx)
+    }
+  }
 }
 
 module.exports = new WebController()
