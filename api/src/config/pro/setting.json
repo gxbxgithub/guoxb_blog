@@ -1,0 +1,11 @@
+{
+  "mongodb": {
+		"blog": "mongodb://guoxb:guoxb$123@172.17.0.1:27017/blog"
+	},
+	"oss": {
+    "accessKeyId": "LTAI5tNb1phkejSrHr5upfy5",
+    "accessKeySecret": "2fRwKzfoLLj7N2kcIrHKIAeDKKVdGn",
+    "bucket": "fileload",
+    "region": "oss-cn-beijing"
+  }
+}

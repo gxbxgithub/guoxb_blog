@@ -6,7 +6,7 @@ const path = require('path')
 const httpUtils = require('../utils/httpUtils')
 const errHandler = require('./errHandler')
 const { REMOTE_SETTINGS_PATH } = require('../config/config.default')
-const settings = require(`../config/${process.env.NODE_ENV}/settings.json`)
+const settings = require(`../config/${process.env.NODE_ENV}/setting.json`)
 
 const app = new Koa()
 // app.use(KoaBody())
