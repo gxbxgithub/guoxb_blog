@@ -1,7 +1,9 @@
 FROM node:9.2.0
 
 RUN mkdir -p /data/api
-COPY ./ /data/api
+COPY ./api /data/api
+COPY ./cms/dist/* /data/api/public
+
 WORKDIR /data/api/
 
 RUN npm config set registry "http://registry.npm.taobao.org/"
