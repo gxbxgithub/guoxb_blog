@@ -78,7 +78,7 @@ export default {
 
   proxy: {
     '/api': {
-      target: process.env.NODE_ENV == 'dev' ? 'http://localhost:8080' : 'http://172.17.0.1:3100',
+      target: process.env.NODE_ENV == 'dev' ? 'http://localhost:8080' : 'http://172.17.0.1:3130',
       // pathRewrite: { '^/api': '' }
     }
   },
