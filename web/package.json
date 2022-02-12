@@ -21,7 +21,6 @@
     "@nuxtjs/proxy": "^2.1.0",
     "@nuxtjs/style-resources": "^1.2.1",
     "core-js": "^3.19.3",
-    "element-ui": "^2.15.6",
     "highlight.js": "^11.4.0",
     "nuxt": "^2.15.8",
     "vue": "^2.6.14",

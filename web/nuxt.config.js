@@ -25,7 +25,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '@/plugins/elementui',
+    // '@/plugins/elementui',
     // '@/plugins/vue-highlight'
     {
       "src": '@/plugins/vue-highlight',
@@ -78,7 +78,7 @@ export default {
 
   proxy: {
     '/api': {
-      target: process.env.NODE_ENV == 'dev' ? 'http://localhost:8080' : 'http://172.17.0.1:3130',
+      target: process.env.NODE_ENV == 'dev' ? 'http://localhost:3130' : 'http://172.17.0.1:3130',
       // pathRewrite: { '^/api': '' }
     }
   },
@@ -92,6 +92,14 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-    vendor: ["axios", "element-ui"]
+    vendor: [
+      "axios", 
+      // "element-ui"
+    ],
+    // 开启打包分析
+    analyze: false,
+    assetFilter: function(assetFilename) {	    		
+      return assetFilename.endsWith('.js');	    	
+    }
   },
 }

@@ -1,0 +1,17 @@
+{
+  "LayoutFooter": {
+    "description": "Auto imported from components/layout-footer.vue"
+  },
+  "LayoutHeader": {
+    "description": "Auto imported from components/layout-header.vue"
+  },
+  "ModuleArticleNew": {
+    "description": "Auto imported from components/module/article-new.vue"
+  },
+  "ModuleArticlePrev": {
+    "description": "Auto imported from components/module/article-prev.vue"
+  },
+  "ModuleTypeList": {
+    "description": "Auto imported from components/module/type-list.vue"
+  }
+}
