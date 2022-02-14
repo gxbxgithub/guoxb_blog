@@ -83,12 +83,12 @@ export default {
     }
   },
 
-  hooks: {
-    'vue-renderer:ssr:context'(context) {
-      const routePath = JSON.stringify(context.nuxt.routePath)
-      context.nuxt = { serverRendered: true, routePath }
-    }
-  },
+  // hooks: {
+  //   'vue-renderer:ssr:context'(context) {
+  //     const routePath = JSON.stringify(context.nuxt.routePath)
+  //     context.nuxt = { serverRendered: true, routePath }
+  //   }
+  // },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {

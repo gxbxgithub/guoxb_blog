@@ -38,11 +38,15 @@ class WebController {
   }
   async articleDetail(ctx) {
     const { id } = ctx.params
+    console.log('id = ', id);
     try {
       let info = await articleModel.detail({ _id: id })
       if (info) {
         let type = await typeModel.oneByQuery({ _id: info.type })
         info._doc.typeInfo = type
+        // 更新阅读数
+        info._doc.readCount += 1
+        await articleModel.update(info._doc)
       }
       ctx.body = reqResult.success(null, info)
     } catch (error) {
@@ -51,8 +55,17 @@ class WebController {
   }
   async typeList(ctx) {
     try {
-      let list = await typeModel.list()
-      ctx.body = reqResult.success(null, list)
+      let types = await typeModel.list()
+      // 查找分类下文章数量
+      let reqArray = []
+      types.forEach(type => {
+        reqArray.push(articleModel.count({ type: type._doc._id }))
+      })
+      let countRst = await Promise.all(reqArray)
+      for (let i = 0; i < types.length; i ++) {
+        types[i]._doc.count = countRst[i]
+      }
+      ctx.body = reqResult.success(null, types)
     } catch (error) {
       ctx.app.emit('error', reqResult.error('加载分类错误'), ctx)
     }

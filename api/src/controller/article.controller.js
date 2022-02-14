@@ -89,6 +89,15 @@ class ArticleController {
     name && Object.assign(searchQuery, { name })
     try {
       let result = await typeModel.list(searchQuery, null, { skip: (page - 1) * size, limit: size })
+      // 查找分类下文章数量
+      let reqArray = []
+      result.forEach(type => {
+        reqArray.push(articleModel.count({ type: type._doc._id }))
+      })
+      let countRst = await Promise.all(reqArray)
+      for (let i = 0; i < result.length; i ++) {
+        result[i]._doc.count = countRst[i]
+      }
       ctx.body = reqResult.success('分类加载成功', result)
     } catch (error) {
       ctx.app.emit('error', reqResult.error('加载分类错误'), ctx)
@@ -104,14 +113,14 @@ class ArticleController {
     }
   }
   async types_operation(ctx) {
-    let { _id, name } = ctx.request.body
+    let { _id, name, shortName } = ctx.request.body
     try {
       let result = null, message = null
       if (_id) {
-        result = await typeModel.update({ _id, name })
+        result = await typeModel.update({ _id, name, shortName })
         message = '分类更新成功'
       } else {
-        result = await typeModel.add({ name })
+        result = await typeModel.add({ name, shortName })
         message = '分类保存成功'
       }
       ctx.body = reqResult.success(message, result)

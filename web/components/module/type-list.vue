@@ -4,7 +4,7 @@
       <h2>分类</h2>
     </div>
     <ul>
-      <li v-for="type in types" :key="type._id"><nuxt-link :to="'/' + type.shortName + '/'">{{ type.name }}</nuxt-link></li>
+      <li v-for="type in types" :key="type._id"><nuxt-link :to="'/' + type.shortName + '/'">{{ type.name }}</nuxt-link>（{{ type.count }}）</li>
     </ul>
   </div>
 </template>

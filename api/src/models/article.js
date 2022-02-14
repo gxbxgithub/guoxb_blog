@@ -41,6 +41,11 @@ module.exports = {
     let total = await dbHelper.count(model, query);
     return { list, total }
   },
+  async count(query) {
+    const model = await getModel()
+    let total = await dbHelper.count(model, query)
+    return total
+  },
   async update({ _id, ...newData }) {
     const model = await getModel()
     return await dbHelper.update(model, { _id }, newData)

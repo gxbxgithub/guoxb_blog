@@ -15,7 +15,8 @@
   <!-- 分类列表 -->
   <el-table class="table-view" :data="typesList" empty-text="暂时没有数据" border>
     <el-table-column prop="name" label="名称" />
-    <el-table-column prop="articleCount" label="文章数量" />
+    <el-table-column prop="shortName" label="路径名称" />
+    <el-table-column prop="count" label="文章数量" />
     <el-table-column align="center" label="操作" width="180">
       <template #default="scope">
         <el-button size="small" @click="handleEdit(scope.$index, scope.row)">修改</el-button>
@@ -28,6 +29,9 @@
     <el-form :model="forms" label-width="120px">
       <el-form-item label="名称">
         <el-input v-model.trim="forms.name" placeholder="请输入分类名称"></el-input>
+      </el-form-item>
+      <el-form-item label="路径名称">
+        <el-input v-model.trim="forms.shortName" placeholder="请输入路径名称（小写英文）"></el-input>
       </el-form-item>
       <div class="forms-btns-view">
         <el-button type="primary" @click="handleCommit">提交</el-button>
@@ -51,6 +55,8 @@ const typesList = computed(() => store.state.article.types)
 const handleCommit = async () => {
   let params = {...forms.value}
   if (!params.name) return proxy.$toast('请填写分类的名称~')
+  if (!params.shortName) return proxy.$toast('请填写路径名称~')
+  params.shortName = params.shortName.toLowerCase()
   let result = null
   if (params._id) {
     result = await proxy.$api_loading.put('/type/edit', params)
