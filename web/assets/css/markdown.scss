@@ -13,6 +13,7 @@
     color: #fff;
     padding: 1em 1.5em;
     display: block;
+    overflow: auto;
   }
   .hljs-comment{color: $color-light;}
   code{background: $color-theme; color: #fff; padding: 0 5px; border-radius: 3px;}
@@ -23,6 +24,17 @@
   p, blockquote, ul, ol, dl, li, table, pre {
     margin: 0.8em 0;
   }
+  ul, ol{
+    padding-left: 25px;
+    &:first-child{margin-top: 0;}
+  }
+  li{list-style: disc;}
+  a{
+    word-wrap: break-word; outline: none; border-bottom: 1px solid $color-normal; cursor: pointer;
+    &:hover{border-bottom: 1px solid $color-theme;}
+  }
+  img{display: block; max-width: 100%; padding: 5px; box-sizing: border-box; border: 1px solid $color-line;}
+
   h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
     position   : relative;

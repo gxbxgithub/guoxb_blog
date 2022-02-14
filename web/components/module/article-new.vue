@@ -7,7 +7,7 @@
       <a class="asset-more-link" :href="'/article/' + article._id">阅读全文 »</a>
     </div>
     <div class="asset-footer">
-      <p class="time">{{ $dayjs(article.createAt).format('YYYY年M月D日 HH:mm') }}</p>
+      <p class="time">{{ $dayjs(article.createAt).format('YYYY年M月D日') }}</p>
     </div>
   </div>
 </template>

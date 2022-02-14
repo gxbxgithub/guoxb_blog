@@ -22,6 +22,9 @@
       <el-form-item label="日期">
         <el-date-picker v-model="forms.createAt" type="date" placeholder="选择文章发布日期" />
       </el-form-item>
+      <el-form-item label="简介">
+        <el-input v-model="forms.intro" type="textarea" placeholder="请输入文章简介" :rows="3"></el-input>
+      </el-form-item>
 
       <mavon-editor 
         v-model="forms.content" 
