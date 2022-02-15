@@ -45,8 +45,10 @@ class WebController {
         let type = await typeModel.oneByQuery({ _id: info.type })
         info._doc.typeInfo = type
         // 更新阅读数
-        info._doc.readCount += 1
-        await articleModel.update(info._doc)
+        if (info._doc.publish == 1) {
+          info._doc.readCount += 1
+          await articleModel.update(info._doc)
+        }
       }
       ctx.body = reqResult.success(null, info)
     } catch (error) {
