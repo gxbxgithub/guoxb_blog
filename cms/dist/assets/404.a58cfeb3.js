@@ -1,0 +1,1 @@
+import{_ as e}from"./index.aaf865c4.js";import{j as o,o as t,t as _}from"./vendor.acb92e5d.js";const a=o({name:"NotFound"}),n={class:"main-view"};function s(c,r,d,i,p,f){return t(),_("div",n," 404 This Page Not Found. ")}var v=e(a,[["render",s],["__scopeId","data-v-76cc2621"]]);export{v as default};

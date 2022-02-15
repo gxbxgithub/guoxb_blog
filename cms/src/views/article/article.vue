@@ -36,7 +36,11 @@
 
   <!-- 菜单列表 -->
   <el-table class="table-view" :data="articleData.list" empty-text="暂时没有数据" border>
-    <el-table-column prop="title" label="标题" />
+    <el-table-column prop="title" label="标题">
+      <template #default="scope">
+        <a class="title-link" :href="'https://guoxb.com/article/' + scope.row._id" target="__blank">{{ scope.row.title }}</a>
+      </template>
+    </el-table-column>
     <el-table-column prop="typeName" label="分类" width="160" />
     <el-table-column prop="readCount" label="阅读数" width="160" />
     <el-table-column prop="publish" label="状态" width="160">
@@ -124,6 +128,10 @@ onMounted(() => {
 })
 </script>
 
-<style scoped>
-
+<style scoped lang="less">
+.table-view{
+  .title-link{
+    color: #333;
+  }
+}
 </style>

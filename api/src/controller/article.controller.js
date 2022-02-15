@@ -12,7 +12,7 @@ class ArticleController {
     type && Object.assign(searchQuery, { type })
     publish != undefined && publish != '' && Object.assign(searchQuery, { publish })
     try {
-      let result = await articleModel.list(searchQuery, null, { skip: (page - 1) * size, limit: size })
+      let result = await articleModel.list(searchQuery, null, { skip: (page - 1) * size, limit: size, sort: { createAt: -1 } })
       let typeIDs = []
       result.list.forEach(article => {
         typeIDs.push(article.type)

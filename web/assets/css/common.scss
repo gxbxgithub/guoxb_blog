@@ -45,3 +45,43 @@ a{color: $color-normal; text-decoration:none;}
     a{color: $color-theme;}
   }
 }
+
+// ipad 适配
+@media screen and (min-width: 640px) and (max-width: 1000px) {
+  .layout{
+    width: 100%; padding: 0 $width-space; box-sizing: border-box;
+  }
+  .one-column .layout{
+    width: 100%; padding: 0 $width-space; box-sizing: border-box;
+  }
+  .content-view{
+    width: calc(100% - 200px - 30px);
+  }
+  .aside-view{
+    width: 200px;
+  }
+}
+
+// mobile 适配
+@media screen and (max-width: 639px) {
+  .layout{
+    width: 100%; padding: 0 15px; box-sizing: border-box;
+    .aside-view{display: none;}
+  }
+  .one-column .layout{
+    width: 100%; padding: 0 15px; box-sizing: border-box;
+  }
+  .content-view{
+    width: 100%;
+  }
+  .module-view{
+    padding: 15px; 
+    margin-bottom: 15px;
+    box-shadow: none;
+  }
+  .guide-view{
+    li{
+      line-height: 50px;
+    }
+  }
+}

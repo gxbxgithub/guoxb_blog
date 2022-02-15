@@ -8,6 +8,7 @@ You can directly use them in pages and other components without the need to impo
 
 - `<LayoutFooter>` | `<layout-footer>` (components/layout-footer.vue)
 - `<LayoutHeader>` | `<layout-header>` (components/layout-header.vue)
+- `<LayoutMenu>` | `<layout-menu>` (components/layout-menu.vue)
 - `<ModuleArticleNew>` | `<module-article-new>` (components/module/article-new.vue)
 - `<ModuleArticlePrev>` | `<module-article-prev>` (components/module/article-prev.vue)
 - `<ModuleTypeList>` | `<module-type-list>` (components/module/type-list.vue)

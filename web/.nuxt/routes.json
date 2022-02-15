@@ -3,28 +3,24 @@
     "name": "article",
     "path": "/article",
     "component": "/Users/guoxb/Desktop/guoxb_blog/web/pages/article/index.vue",
-    "chunkName": "pages/article/index",
-    "_name": "_7c50bc6e"
+    "chunkName": "pages/article/index"
   },
   {
     "name": "article-id",
     "path": "/article/:id",
     "component": "/Users/guoxb/Desktop/guoxb_blog/web/pages/article/_id.vue",
-    "chunkName": "pages/article/_id",
-    "_name": "_6574fb1e"
+    "chunkName": "pages/article/_id"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/Users/guoxb/Desktop/guoxb_blog/web/pages/index.vue",
-    "chunkName": "pages/index",
-    "_name": "_444703a2"
+    "chunkName": "pages/index"
   },
   {
     "name": "type",
     "path": "/:type",
     "component": "/Users/guoxb/Desktop/guoxb_blog/web/pages/_type.vue",
-    "chunkName": "pages/_type",
-    "_name": "_517e2769"
+    "chunkName": "pages/_type"
   }
 ]

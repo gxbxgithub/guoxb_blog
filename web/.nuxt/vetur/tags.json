@@ -5,6 +5,9 @@
   "LayoutHeader": {
     "description": "Auto imported from components/layout-header.vue"
   },
+  "LayoutMenu": {
+    "description": "Auto imported from components/layout-menu.vue"
+  },
   "ModuleArticleNew": {
     "description": "Auto imported from components/module/article-new.vue"
   },

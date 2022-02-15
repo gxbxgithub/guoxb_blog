@@ -5,24 +5,24 @@ $color-middle: #666;
 $color-light : #999;
 $color-line  : #dcdfe6;
 
-$width-space: 30px;
-$width-layout      : 1180px;
+$width-space         : 30px;
+$width-layout        : 1180px;
 $width-layout-article: 960px;
-$width-layout-aside: 260px;
+$width-layout-aside  : 260px;
 $width-layout-content: calc(100% - #{$width-layout-aside} - #{$width-space});
 
 $border-radius: 10px;
 
-@mixin manyLine($line: 1){
-  white-space: pre-wrap;
-  -moz-white-space: pre-wrap;
-  display: -moz-box;
-  display: -webkit-box;
-  display: box;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  -moz-box-orient: vertical;
+@mixin manyLine($line: 1) {
+  white-space       : pre-wrap;
+  -moz-white-space  : pre-wrap;
+  display           : -moz-box;
+  display           : -webkit-box;
+  display           : box;
+  text-overflow     : ellipsis;
+  overflow          : hidden;
+  -moz-box-orient   : vertical;
   -webkit-box-orient: vertical;
-  box-orient: vertical;
+  box-orient        : vertical;
   -webkit-line-clamp: $line;
 }

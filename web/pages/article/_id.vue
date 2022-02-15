@@ -23,7 +23,7 @@
 export default {
   head() {
     return {
-      title: this.article.title + ' - 郭晓波的博客'
+      title: this.article.title + ' - 郭晓波的博客',
     }
   },
   async asyncData({ $axios, params }) {

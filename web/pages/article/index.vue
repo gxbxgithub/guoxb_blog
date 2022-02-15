@@ -35,11 +35,6 @@ export default {
       title: '最近文章 - 郭晓波的博客'
     }
   },
-  data() {
-    return {
-      list: []
-    }
-  },
   computed: {
     prevList() {
       if (this.list.length == 0) return []

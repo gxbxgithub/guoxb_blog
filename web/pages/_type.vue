@@ -40,11 +40,6 @@ export default {
       title: '分类：' + this.typeInfo.name + ' - 郭晓波的博客'
     }
   },
-  data() {
-    return {
-      list: []
-    }
-  },
   computed: {
     sortedList() {
       if (this.list.lenght == 0) return {}
