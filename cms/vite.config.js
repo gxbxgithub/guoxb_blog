@@ -7,6 +7,12 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
+// Analyzer
+import { visualizer } from 'rollup-plugin-visualizer'
+
+// gzip
+import viteCompression from 'vite-plugin-compression'
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [
@@ -18,6 +24,10 @@ export default defineConfig({
     Components({
       resolvers: [ElementPlusResolver()],
     }),
+    // Analyzer
+    visualizer(),
+    // gzip
+    viteCompression()
   ],
   resolve: {
     alias: {
