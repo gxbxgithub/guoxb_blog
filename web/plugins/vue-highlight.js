@@ -21,20 +21,33 @@ let Highlight = {};
 // 自定义hig配置
 // 自定义插件
 Highlight.install = function (Vue) {
+  const func = function (el) {
+    let blocks = el.querySelectorAll('pre code');
+    blocks.forEach(block => {
+      // 1.创建ul节点
+      let ul = document.createElement("ul");
+      // 2.根据换行符获取行数，根据获取的行数生成行号
+      let rowCount = block.outerHTML.split('\n').length;
+      for (let i = 1; i < rowCount; i++) {
+        //创建li节点，创建文本节点
+        let li = document.createElement("li")
+        let text = document.createTextNode(i)
+        //为li追加文本节点，将li加入ul
+        li.appendChild(text)
+        ul.appendChild(li)
+      }
+      // 3.给行号添加类名
+      ul.className = 'pre-numbering'
+      // 4.将ul节点加到 代码块
+      block.parentNode.appendChild(ul)
+      hljs.highlightBlock(block)
+    })
+  }
+
   // 自定义指令 v-highlight
   Vue.directive('highlight', {
-    inserted: function(el) {
-      let blocks = el.querySelectorAll('pre code');
-      blocks.forEach(block => {
-        hljs.highlightBlock(block)
-      })
-    },
-    componentUpdated: function (el) {
-      let blocks = el.querySelectorAll('pre code');
-      blocks.forEach(block => {
-        hljs.highlightBlock(block)
-      })
-    }
+    inserted: func,
+    componentUpdated: func
   })
 };
 

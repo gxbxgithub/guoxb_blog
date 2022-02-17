@@ -47,7 +47,7 @@ a{color: $color-normal; text-decoration:none;}
 }
 
 // ipad 适配
-@media screen and (min-width: 640px) and (max-width: 1000px) {
+@media screen and (min-width: 640px) and (max-width: $width-layout) {
   .layout{
     width: 100%; padding: 0 $width-space; box-sizing: border-box;
   }

@@ -11,7 +11,7 @@
     font-size: 14px;
     background: $color-normal;
     color: #fff;
-    padding: 1em 1.5em;
+    padding: 1em 1.5em 1em 40px;
     display: block;
     overflow: auto;
   }
@@ -20,6 +20,13 @@
   blockquote {border-left: 5px solid $color-theme; padding: 10px 15px; background: #eee;}
   blockquote>:first-child {margin-top: 0;}
   blockquote>:last-child {margin-bottom: 0;}
+  // 行号
+  pre {position: relative;}
+  .pre-numbering {
+    padding: 0; margin: 0;
+    position: absolute; top: 0.875em; left: 0; width: 30px; border-right: 1px solid $color-light; text-align: center;
+    li{list-style: none; color: $color-light; font-size: 1em; line-height: 1.8em; margin: 0;}
+  }
 
   p, blockquote, ul, ol, dl, li, table, pre {
     margin: 0.8em 0;
