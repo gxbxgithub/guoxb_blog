@@ -5,7 +5,7 @@
     "components/module-article-prev.js": "components/module-article-prev.js",
     "components/module-type-list.js": "components/module-type-list.js",
     "pages/_type.js": "pages/_type.js",
-    "pages/article/_id.js": "pages/article/_id.js",
+    "pages/article/_id.html.js": "pages/article/_id.html.js",
     "pages/article/index.js": "pages/article/index.js",
     "pages/index.js": "pages/index.js",
     "server.js": "server.js"
@@ -15,7 +15,7 @@
     "components/module-article-prev.js": "components/module-article-prev.js.map",
     "components/module-type-list.js": "components/module-type-list.js.map",
     "pages/_type.js": "pages/_type.js.map",
-    "pages/article/_id.js": "pages/article/_id.js.map",
+    "pages/article/_id.html.js": "pages/article/_id.html.js.map",
     "pages/article/index.js": "pages/article/index.js.map",
     "pages/index.js": "pages/index.js.map",
     "server.js": "server.js.map"

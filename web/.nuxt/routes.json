@@ -7,11 +7,11 @@
     "_name": "_7c50bc6e"
   },
   {
-    "name": "article-id",
-    "path": "/article/:id",
-    "component": "/Users/guoxb/Desktop/guoxb_blog/web/pages/article/_id.vue",
-    "chunkName": "pages/article/_id",
-    "_name": "_6574fb1e"
+    "name": "article-id.html",
+    "path": "/article/:id.html",
+    "component": "/Users/guoxb/Desktop/guoxb_blog/web/pages/article/_id.html.vue",
+    "chunkName": "pages/article/_id.html",
+    "_name": "_7d280eb8"
   },
   {
     "name": "index",

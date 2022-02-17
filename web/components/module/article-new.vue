@@ -4,7 +4,7 @@
     <p class="asset-tags">分类：<nuxt-link :to="'/' + article.typeInfo.shortName + '/'">{{ article.typeInfo.name }}</nuxt-link></p>
     <div class="asset-content">
       <p class="asset-body">{{ article.intro }}</p>
-      <a class="asset-more-link" :href="'/article/' + article._id">阅读全文 »</a>
+      <nuxt-link class="asset-more-link" :to="'/article/' + article._id + '.html'">阅读全文 »</nuxt-link>
     </div>
     <div class="asset-footer">
       <p class="time">{{ $dayjs(article.createAt).format('YYYY年M月D日') }}</p>

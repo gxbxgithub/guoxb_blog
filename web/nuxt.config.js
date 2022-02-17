@@ -28,7 +28,11 @@ export default {
     // '@/plugins/elementui',
     // '@/plugins/vue-highlight'
     {
-      "src": '@/plugins/vue-highlight',
+      src: '@/plugins/vue-highlight',
+      ssr: false
+    },
+    {
+      src: '@/plugins/route',
       ssr: false
     }
   ],

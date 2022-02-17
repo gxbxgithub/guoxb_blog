@@ -17,7 +17,7 @@
             </template>
             <template slot-scope="scope">
               <li class="article-list-li">
-                <a :href="'/article/' + scope.article._id">{{ scope.article.title }}<p>（ {{ $dayjs(scope.article.createAt).format('YYYY.MM.DD') }} ）</p></a>
+                <nuxt-link :to="'/article/' + scope.article._id + '.html'">{{ scope.article.title }}<p>（ {{ $dayjs(scope.article.createAt).format('YYYY.MM.DD') }} ）</p></nuxt-link>
               </li>
             </template>
           </module-article-prev>

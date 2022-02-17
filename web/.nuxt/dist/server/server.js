@@ -43,7 +43,7 @@ module.exports =
 /******/
 /******/ 		// "0" is the signal for "already loaded"
 /******/ 		if(installedChunks[chunkId] !== 0) {
-/******/ 			var chunk = require("./" + ({"1":"components/module-article-new","2":"components/module-article-prev","3":"components/module-type-list","4":"pages/_type","5":"pages/article/_id","6":"pages/article/index","7":"pages/index"}[chunkId]||chunkId) + ".js");
+/******/ 			var chunk = require("./" + ({"1":"components/module-article-new","2":"components/module-article-prev","3":"components/module-type-list","4":"pages/_type","5":"pages/article/_id.html","6":"pages/article/index","7":"pages/index"}[chunkId]||chunkId) + ".js");
 /******/ 			var moreModules = chunk.modules, chunkIds = chunk.ids;
 /******/ 			for(var moduleId in moreModules) {
 /******/ 				modules[moduleId] = moreModules[moduleId];
@@ -115,7 +115,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 22);
+/******/ 	return __webpack_require__(__webpack_require__.s = 23);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -502,7 +502,7 @@ module.exports = require("vue-router");
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(25);
+var content = __webpack_require__(26);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -519,7 +519,7 @@ module.exports.__inject__ = function (context) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(27);
+var content = __webpack_require__(28);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -536,7 +536,7 @@ module.exports.__inject__ = function (context) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(33);
+var content = __webpack_require__(34);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -553,7 +553,7 @@ module.exports.__inject__ = function (context) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(35);
+var content = __webpack_require__(36);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -570,7 +570,7 @@ module.exports.__inject__ = function (context) {
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(37);
+var content = __webpack_require__(38);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
@@ -584,48 +584,54 @@ module.exports.__inject__ = function (context) {
 /* 16 */
 /***/ (function(module, exports) {
 
-module.exports = require("node-fetch");
+// This file is intentionally left empty for noop aliases
 
 /***/ }),
 /* 17 */
 /***/ (function(module, exports) {
 
-module.exports = require("vue-meta");
+module.exports = require("node-fetch");
 
 /***/ }),
 /* 18 */
 /***/ (function(module, exports) {
 
-module.exports = require("dayjs/plugin/utc");
+module.exports = require("vue-meta");
 
 /***/ }),
 /* 19 */
 /***/ (function(module, exports) {
 
-module.exports = require("dayjs/plugin/timezone");
+module.exports = require("dayjs/plugin/utc");
 
 /***/ }),
 /* 20 */
 /***/ (function(module, exports) {
 
-module.exports = require("markdown-it");
+module.exports = require("dayjs/plugin/timezone");
 
 /***/ }),
 /* 21 */
 /***/ (function(module, exports) {
 
-module.exports = require("defu");
+module.exports = require("markdown-it");
 
 /***/ }),
 /* 22 */
+/***/ (function(module, exports) {
+
+module.exports = require("defu");
+
+/***/ }),
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(23);
+__webpack_require__(24);
 module.exports = __webpack_require__(41);
 
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports) {
 
 global.installComponents = function (component, components) {
@@ -669,7 +675,7 @@ function provideFunctionalComponents(component, components) {
 
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -680,7 +686,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -693,7 +699,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -704,7 +710,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -717,20 +723,20 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(29);
+var content = __webpack_require__(30);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 __webpack_require__(4).default("407e83d9", content, true)
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -743,20 +749,20 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(31);
+var content = __webpack_require__(32);
 if(content.__esModule) content = content.default;
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 __webpack_require__(4).default("0a8b39ce", content, true)
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -769,7 +775,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -780,7 +786,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -793,7 +799,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -804,7 +810,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -817,7 +823,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -828,7 +834,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
@@ -841,7 +847,7 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -878,16 +884,10 @@ const actions = {
 };
 
 /***/ }),
-/* 39 */
-/***/ (function(module, exports) {
-
-module.exports = require("dayjs/locale/en");
-
-/***/ }),
 /* 40 */
 /***/ (function(module, exports) {
 
-// This file is intentionally left empty for noop aliases
+module.exports = require("dayjs/locale/en");
 
 /***/ }),
 /* 41 */
@@ -915,7 +915,7 @@ var external_vue_default = /*#__PURE__*/__webpack_require__.n(external_vue_);
 var external_ufo_ = __webpack_require__(1);
 
 // EXTERNAL MODULE: external "node-fetch"
-var external_node_fetch_ = __webpack_require__(16);
+var external_node_fetch_ = __webpack_require__(17);
 var external_node_fetch_default = /*#__PURE__*/__webpack_require__.n(external_node_fetch_);
 
 // CONCATENATED MODULE: ./.nuxt/middleware.js
@@ -1607,7 +1607,7 @@ var external_vuex_ = __webpack_require__(6);
 var external_vuex_default = /*#__PURE__*/__webpack_require__.n(external_vuex_);
 
 // EXTERNAL MODULE: external "vue-meta"
-var external_vue_meta_ = __webpack_require__(17);
+var external_vue_meta_ = __webpack_require__(18);
 var external_vue_meta_default = /*#__PURE__*/__webpack_require__.n(external_vue_meta_);
 
 // EXTERNAL MODULE: external "vue-client-only"
@@ -1701,7 +1701,7 @@ function shouldScrollToTop(route) {
 
 const _7c50bc6e = () => interopDefault(__webpack_require__.e(/* import() | pages/article/index */ 6).then(__webpack_require__.bind(null, 69)));
 
-const _6574fb1e = () => interopDefault(__webpack_require__.e(/* import() | pages/article/_id */ 5).then(__webpack_require__.bind(null, 70)));
+const _7d280eb8 = () => interopDefault(__webpack_require__.e(/* import() | pages/article/_id.html */ 5).then(__webpack_require__.bind(null, 70)));
 
 const _444703a2 = () => interopDefault(__webpack_require__.e(/* import() | pages/index */ 7).then(__webpack_require__.bind(null, 71)));
 
@@ -1721,9 +1721,9 @@ const routerOptions = {
     component: _7c50bc6e,
     name: "article"
   }, {
-    path: "/article/:id",
-    component: _6574fb1e,
-    name: "article-id"
+    path: "/article/:id.html",
+    component: _7d280eb8,
+    name: "article-id.html"
   }, {
     path: "/",
     component: _444703a2,
@@ -1914,7 +1914,7 @@ var componentNormalizer = __webpack_require__(2);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(24)
+  var style0 = __webpack_require__(25)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -2218,7 +2218,7 @@ var nuxt_loading_render, nuxt_loading_staticRenderFns
 
 function nuxt_loading_injectStyles (context) {
   
-  var style0 = __webpack_require__(26)
+  var style0 = __webpack_require__(27)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -2238,10 +2238,10 @@ var nuxt_loading_component = Object(componentNormalizer["a" /* default */])(
 
 /* harmony default export */ var nuxt_loading = (nuxt_loading_component.exports);
 // EXTERNAL MODULE: ./assets/css/common.scss
-var common = __webpack_require__(28);
+var common = __webpack_require__(29);
 
 // EXTERNAL MODULE: ./assets/css/markdown.scss
-var markdown = __webpack_require__(30);
+var markdown = __webpack_require__(31);
 
 // CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/default.vue?vue&type=template&id=63e2bf32&
 var defaultvue_type_template_id_63e2bf32_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"container-view"}},[_c('layout-header'),_vm._ssrNode(" "),_c('layout-menu'),_vm._ssrNode(" "),_c('nuxt'),_vm._ssrNode(" "),_c('layout-footer')],2)}
@@ -2462,7 +2462,7 @@ external_vue_default.a.use(external_vuex_default.a);
 let store_store = {};
 
 (function updateModules() {
-  store_store = normalizeRoot(__webpack_require__(38), 'store/index.js'); // If store is an exported method = classic mode (deprecated)
+  store_store = normalizeRoot(__webpack_require__(39), 'store/index.js'); // If store is an exported method = classic mode (deprecated)
   // Enforce store modules
 
   store_store.modules = store_store.modules || {}; // If the environment supports hot reloading...
@@ -2552,14 +2552,14 @@ var external_dayjs_ = __webpack_require__(5);
 var external_dayjs_default = /*#__PURE__*/__webpack_require__.n(external_dayjs_);
 
 // EXTERNAL MODULE: external "dayjs/locale/en"
-var en_ = __webpack_require__(39);
+var en_ = __webpack_require__(40);
 
 // EXTERNAL MODULE: external "dayjs/plugin/utc"
-var utc_ = __webpack_require__(18);
+var utc_ = __webpack_require__(19);
 var utc_default = /*#__PURE__*/__webpack_require__.n(utc_);
 
 // EXTERNAL MODULE: external "dayjs/plugin/timezone"
-var timezone_ = __webpack_require__(19);
+var timezone_ = __webpack_require__(20);
 var timezone_default = /*#__PURE__*/__webpack_require__.n(timezone_);
 
 // CONCATENATED MODULE: ./.nuxt/dayjs-plugin.js
@@ -2576,7 +2576,7 @@ external_dayjs_default.a.tz.setDefault('Asia/BeiJing');
   inject('dayjs', external_dayjs_default.a);
 });
 // EXTERNAL MODULE: external "markdown-it"
-var external_markdown_it_ = __webpack_require__(20);
+var external_markdown_it_ = __webpack_require__(21);
 var external_markdown_it_default = /*#__PURE__*/__webpack_require__.n(external_markdown_it_);
 
 // CONCATENATED MODULE: ./.nuxt/markdownit.js
@@ -2596,7 +2596,7 @@ var external_axios_ = __webpack_require__(7);
 var external_axios_default = /*#__PURE__*/__webpack_require__.n(external_axios_);
 
 // EXTERNAL MODULE: external "defu"
-var external_defu_ = __webpack_require__(21);
+var external_defu_ = __webpack_require__(22);
 var external_defu_default = /*#__PURE__*/__webpack_require__.n(external_defu_);
 
 // CONCATENATED MODULE: ./.nuxt/axios.js
@@ -2800,7 +2800,7 @@ const setupProgress = axios => {
   inject('axios', axios);
 });
 // EXTERNAL MODULE: ./.nuxt/empty.js
-var _nuxt_empty = __webpack_require__(40);
+var _nuxt_empty = __webpack_require__(16);
 
 // CONCATENATED MODULE: ./.nuxt/index.js
 
@@ -2826,6 +2826,8 @@ var _nuxt_empty = __webpack_require__(40);
  // Source: ./axios.js (mode: 'all')
 
  // Source: ../plugins/vue-highlight (mode: 'client')
+
+ // Source: ../plugins/route (mode: 'client')
 // Component: <ClientOnly>
 
 external_vue_default.a.component(external_vue_client_only_default.a.name, external_vue_client_only_default.a); // TODO: Remove in Nuxt 3: <NoSsr>
@@ -3064,6 +3066,8 @@ async function createApp(ssrContext, config = {}) {
   if (typeof _nuxt_axios === 'function') {
     await _nuxt_axios(app.context, inject);
   }
+
+  if (false) {}
 
   if (false) {} // Lock enablePreview in context
 
@@ -3507,7 +3511,7 @@ var componentNormalizer = __webpack_require__(2);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(32)
+  var style0 = __webpack_require__(33)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -3595,7 +3599,7 @@ var componentNormalizer = __webpack_require__(2);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(34)
+  var style0 = __webpack_require__(35)
 if (style0.__inject__) style0.__inject__(context)
 
 }
@@ -3656,7 +3660,7 @@ var componentNormalizer = __webpack_require__(2);
 
 function injectStyles (context) {
   
-  var style0 = __webpack_require__(36)
+  var style0 = __webpack_require__(37)
 if (style0.__inject__) style0.__inject__(context)
 
 }

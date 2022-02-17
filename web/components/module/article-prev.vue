@@ -10,7 +10,7 @@
         <slot :article="item">
           <li>
             <span>{{ $dayjs(item.createAt).format('YYYY.MM.DD') }}</span>
-            <a :href="'/article/' + item._id">{{ item.title }}</a>
+            <nuxt-link :to="'/article/' + item._id + '.html'">{{ item.title }}</nuxt-link>
           </li>
         </slot>
       </template>
