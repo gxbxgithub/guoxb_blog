@@ -23,9 +23,9 @@ const get = async (url, params, timeout = TIMEOUT) => {
  * @param {*} params 
  * @returns {Promise}
  */
-const post = async (url, params, timeout = TIMEOUT) => {
+const post = async (url, params, config = {}, timeout = TIMEOUT) => {
   return new Promise((resolve, reject) => {
-    axios.post(url, params, { timeout }).then(res => {
+    axios.post(url, params, { timeout, ...config }).then(res => {
       resolve(res.data)
     }).catch(err => {
       reject(err)

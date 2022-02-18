@@ -9,4 +9,5 @@ router.get('/article/detail/:id', webController.articleDetail)
 router.get('/type/list', webController.typeList)
 router.get('/type/detail/:name', webController.typeInfo)
 
+
 module.exports = router

@@ -1,7 +1,6 @@
 const reqResult = require('../utils/reqResult')
 const articleModel = require('../models/article')
 const typeModel = require('../models/type')
-
 class WebController {
   async articleList(ctx) {
     let { page, size, title, type } = ctx.query
@@ -61,7 +60,7 @@ class WebController {
       // 查找分类下文章数量
       let reqArray = []
       types.forEach(type => {
-        reqArray.push(articleModel.count({ type: type._doc._id }))
+        reqArray.push(articleModel.count({ type: type._doc._id, publish: 1 }))
       })
       let countRst = await Promise.all(reqArray)
       for (let i = 0; i < types.length; i ++) {

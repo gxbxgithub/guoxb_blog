@@ -1,6 +1,7 @@
 const reqResult = require('../utils/reqResult')
 const articleModel = require('../models/article')
 const typeModel = require('../models/type')
+const httpUtils = require('../utils/httpUtils')
 class ArticleController {
   //#region 文章
   async list(ctx) {
@@ -78,6 +79,30 @@ class ArticleController {
       ctx.app.emit('error', reqResult.error('删除文章错误'), ctx)
     }
   }
+  async push(ctx) {
+    try {
+      let { ids } = ctx.request.body
+      let urls = []
+      ids.forEach(id => {
+        urls.push(`https://guoxb.com/article/${id}.html`)
+      })
+      console.log(urls)
+      let result = await httpUtils.post('http://data.zz.baidu.com/urls?site=https://guoxb.com&token=XczjPU9IhzLzkyNS', { urls }, {
+        headers: { 'Content-Type': 'text/plain' },
+        transformRequest: [
+          function (data) {
+            return data.urls.join('\n')
+          }
+        ]
+      })
+      if (result && result.success > 0) {
+        return ctx.body = reqResult.success(`文章推送成功 ${result.success} 条，剩余 ${result.remain} 条`, result)
+      }
+      ctx.app.emit('error', reqResult.fail('文章推送失败'), ctx)
+    } catch (error) {
+      ctx.app.emit('error', reqResult.error('文章推送错误'), ctx)
+    }
+  }
   //#endregion
 
   //#region 分类
@@ -95,7 +120,7 @@ class ArticleController {
         reqArray.push(articleModel.count({ type: type._doc._id }))
       })
       let countRst = await Promise.all(reqArray)
-      for (let i = 0; i < result.length; i ++) {
+      for (let i = 0; i < result.length; i++) {
         result[i]._doc.count = countRst[i]
       }
       ctx.body = reqResult.success('分类加载成功', result)

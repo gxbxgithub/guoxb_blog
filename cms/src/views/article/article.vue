@@ -28,6 +28,7 @@
           <el-space :size="20">
             <el-button @click="loadArticleList(true)">查询</el-button>
             <el-button type="primary" plain @click="handleAddArticle">新增</el-button>
+            <el-button type="primary" plain @click="handlePushArticle">SEO推送</el-button>
           </el-space>
         </el-col>
       </el-row>
@@ -114,6 +115,15 @@ handleDelete = async (index, article) => {
 },
 handleAddArticle = () => {
   router.push('/content/article/edit')
+},
+handlePushArticle = async () => {
+  let articleIds = []
+  articleData.list.forEach(article => {
+    articleIds.push(article._id)
+  })
+  const result = await proxy.$api_loading.post('/article/push', { ids: articleIds })
+  if (!result) return
+  proxy.$toast(result.message, 'success')
 },
 loadArticleList = async reload => {
   if (reload) query.page = 1

@@ -11,6 +11,7 @@ router.post('/article/create', auth, articleValidator, articleController.operati
 router.put('/article/edit', auth, articleValidator, articleController.operation)
 router.put('/article/publish', auth, articleController.publish)
 router.delete('/article/delete', auth, articleController.delete)
+router.post('/article/push', articleController.push) // 百度收录
 
 // 分类
 router.get('/type/list', auth, articleController.types_list)
