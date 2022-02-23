@@ -81,12 +81,15 @@ class ArticleController {
   }
   async push(ctx) {
     try {
-      let { ids } = ctx.request.body
+      const query = { $or: [{ pushed: 0 }, { pushed: { $exists: false } }], publish: 1 }
+      let waitPushArticles = await articleModel.listByQuery(query, '_id pushed', null)
       let urls = []
-      ids.forEach(id => {
-        urls.push(`https://guoxb.com/article/${id}.html`)
+      waitPushArticles.forEach(article => {
+        urls.push(`https://guoxb.com/article/${article._id}.html`)
       })
-      console.log(urls)
+      if (urls.length == 0) {
+        return ctx.body = reqResult.success('暂无文章可推送')
+      }
       let result = await httpUtils.post('http://data.zz.baidu.com/urls?site=https://guoxb.com&token=XczjPU9IhzLzkyNS', { urls }, {
         headers: { 'Content-Type': 'text/plain' },
         transformRequest: [
@@ -96,6 +99,7 @@ class ArticleController {
         ]
       })
       if (result && result.success > 0) {
+        await articleModel.updateMany(query, { pushed: 1 })
         return ctx.body = reqResult.success(`文章推送成功 ${result.success} 条，剩余 ${result.remain} 条`, result)
       }
       ctx.app.emit('error', reqResult.fail('文章推送失败'), ctx)

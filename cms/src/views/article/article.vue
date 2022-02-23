@@ -39,7 +39,7 @@
   <el-table class="table-view" :data="articleData.list" empty-text="暂时没有数据" border>
     <el-table-column prop="title" label="标题">
       <template #default="scope">
-        <a class="title-link" :href="'https://guoxb.com/article/' + scope.row._id" target="__blank">{{ scope.row.title }}</a>
+        <a class="title-link" :href="'https://guoxb.com/article/' + scope.row._id + '.html'" target="__blank">{{ scope.row.title }}</a>
       </template>
     </el-table-column>
     <el-table-column prop="typeName" label="分类" width="160" />
@@ -117,11 +117,7 @@ handleAddArticle = () => {
   router.push('/content/article/edit')
 },
 handlePushArticle = async () => {
-  let articleIds = []
-  articleData.list.forEach(article => {
-    articleIds.push(article._id)
-  })
-  const result = await proxy.$api_loading.post('/article/push', { ids: articleIds })
+  const result = await proxy.$api_loading.post('/article/push', {})
   if (!result) return
   proxy.$toast(result.message, 'success')
 },
