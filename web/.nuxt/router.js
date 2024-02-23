@@ -4,10 +4,10 @@ import { normalizeURL, decode } from 'ufo'
 import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
-const _7c50bc6e = () => interopDefault(import('../pages/article/index.vue' /* webpackChunkName: "pages/article/index" */))
-const _7d280eb8 = () => interopDefault(import('../pages/article/_id.html.vue' /* webpackChunkName: "pages/article/_id.html" */))
-const _444703a2 = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
-const _517e2769 = () => interopDefault(import('../pages/_type.vue' /* webpackChunkName: "pages/_type" */))
+const _1657b236 = () => interopDefault(import('../pages/article/index.vue' /* webpackChunkName: "pages/article/index" */))
+const _55a3b7c8 = () => interopDefault(import('../pages/article/_id.html.vue' /* webpackChunkName: "pages/article/_id.html" */))
+const _52b864be = () => interopDefault(import('../pages/index.vue' /* webpackChunkName: "pages/index" */))
+const _5fef8885 = () => interopDefault(import('../pages/_type.vue' /* webpackChunkName: "pages/_type" */))
 
 const emptyFn = () => {}
 
@@ -22,19 +22,19 @@ export const routerOptions = {
 
   routes: [{
     path: "/article",
-    component: _7c50bc6e,
+    component: _1657b236,
     name: "article"
   }, {
     path: "/article/:id.html",
-    component: _7d280eb8,
+    component: _55a3b7c8,
     name: "article-id.html"
   }, {
     path: "/",
-    component: _444703a2,
+    component: _52b864be,
     name: "index"
   }, {
     path: "/:type",
-    component: _517e2769,
+    component: _5fef8885,
     name: "type"
   }],
 

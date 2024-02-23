@@ -1,6 +1,6 @@
 {
   "mongodb": {
-		"blog": "mongodb://guoxb:guoxb$123@47.104.82.94:27017/blog"
+		"blog": "mongodb://127.0.0.1:27018/blog"
 	},
 	"oss": {
     "accessKeyId": "LTAI5tNb1phkejSrHr5upfy5",

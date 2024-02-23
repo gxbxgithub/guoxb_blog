@@ -1,9 +1,9 @@
-export const LayoutFooter = () => import('../../components/layout-footer.vue' /* webpackChunkName: "components/layout-footer" */).then(c => wrapFunctional(c.default || c))
-export const LayoutHeader = () => import('../../components/layout-header.vue' /* webpackChunkName: "components/layout-header" */).then(c => wrapFunctional(c.default || c))
-export const LayoutMenu = () => import('../../components/layout-menu.vue' /* webpackChunkName: "components/layout-menu" */).then(c => wrapFunctional(c.default || c))
-export const ModuleArticleNew = () => import('../../components/module/article-new.vue' /* webpackChunkName: "components/module-article-new" */).then(c => wrapFunctional(c.default || c))
-export const ModuleArticlePrev = () => import('../../components/module/article-prev.vue' /* webpackChunkName: "components/module-article-prev" */).then(c => wrapFunctional(c.default || c))
-export const ModuleTypeList = () => import('../../components/module/type-list.vue' /* webpackChunkName: "components/module-type-list" */).then(c => wrapFunctional(c.default || c))
+export { default as LayoutFooter } from '../../components/layout-footer.vue'
+export { default as LayoutHeader } from '../../components/layout-header.vue'
+export { default as LayoutMenu } from '../../components/layout-menu.vue'
+export { default as ModuleArticleNew } from '../../components/module/article-new.vue'
+export { default as ModuleArticlePrev } from '../../components/module/article-prev.vue'
+export { default as ModuleTypeList } from '../../components/module/type-list.vue'
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {

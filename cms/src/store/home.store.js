@@ -1,3 +1,4 @@
+import {vx} from '../constant/index'
 import { service, serviceLoading } from '@/network/request'
 
 const state = () => ({
@@ -5,7 +6,7 @@ const state = () => ({
 })
 
 const mutations = {
-  SAVE_USERINFO(state, userInfo) {
+  [vx.SAVE_USERINFO](state, userInfo) {
     state.userInfo = userInfo
   }
 }
@@ -15,7 +16,7 @@ const actions = {
     let result = await service.post('/user/login', params)
     if (result) {
       const { token, ...userInfo } = result.data
-      commit('SAVE_USERINFO', userInfo)
+      commit(vx.SAVE_USERINFO, userInfo)
       localStorage.setItem('userInfo', JSON.stringify(userInfo))
     }
     return result

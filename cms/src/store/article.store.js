@@ -1,3 +1,4 @@
+import {vx} from '../constant/index'
 import { service, serviceLoading } from '../network/request'
 
 const state = () => ({
@@ -5,17 +6,17 @@ const state = () => ({
 })
 
 const mutations = {
-  SetTypesList(state, list) {
+  [vx.SET_TYPES_LIST](state, list) {
     state.types = list
   }
 }
 
 const actions = {
-  async getTypesList({state, commit}, reload) {
+  async [vx.GET_TYPES_LIST]({state, commit}, reload) {
     if (!reload && state.types && state.types.length > 0) return
     const result = await service.get('/type/list')
     if (!result) return
-    commit('SetTypesList', result.data)
+    commit(vx.SET_TYPES_LIST, result.data)
   }
 }
 

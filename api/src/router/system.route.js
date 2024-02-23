@@ -5,6 +5,7 @@ const { auth } = require('../middleware/auth.middleware')
 
 // 文件图片
 router.post('/upload', auth, systemController.upload)
+router.get('/openid', systemController.openId)
 
 module.exports = router
 
